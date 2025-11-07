@@ -23,11 +23,12 @@ db_output[db_output == ""] <- NA
 - McPAS-TCR
 ```R
 download.file(
-  url = "https://xget.xi-xu.me/gh/GongZheng-bio/ImmunoDB-archive/raw/refs/heads/main/McPAS-TCR/McPAS-TCR.csv",
+  url = "https://xget.xi-xu.me/gh/GongZheng-bio/ImmunoDB-archive/raw/refs/heads/main/McPAS-TCR/McPAS-TCR-2020-09-10.csv",
   destfile = "McPAS-TCR.csv"
 )
 
 db_output <- read.csv(file = "McPAS-TCR.csv",sep = ",",header = TRUE)
+db_output[db_output == ""] <- NA
 ```
 
 - IEDB-AR
@@ -38,18 +39,17 @@ db_output <- read.csv(file = "McPAS-TCR.csv",sep = ",",header = TRUE)
 - TBAdb
 ```R
 download.file(
-  url = "https://xget.xi-xu.me/gh/GongZheng-bio/ImmunoDB-archive/raw/refs/heads/main/TBAdb/TBAdb-2020-09-10.xlsx",
-  destfile = "TBAdb-2020-09-10.xlsx"
+  url = "https://xget.xi-xu.me/gh/GongZheng-bio/ImmunoDB-archive/raw/refs/heads/main/TBAdb/TBAdb.xlsx",
+  destfile = "TBAdb.xlsx"
 )
 # 第一张表：alpha+beta TCR
-db_output <- readxl::read_excel("TBAdb-2020-09-10.xlsx", sheet = "TCR-AB")
+db_output <- readxl::read_excel("TBAdb.xlsx", sheet = "TCR-AB")
 # 第二张表：delta+gamma TCR
-db_output <- readxl::read_excel("TBAdb-2020-09-10.xlsx", sheet = "TCR-GD")
+db_output <- readxl::read_excel("TBAdb.xlsx", sheet = "TCR-GD")
 # 第三张表：BCR
-db_output <- readxl::read_excel("TBAdb-2020-09-10.xlsx", sheet = "BCR")
+db_output <- readxl::read_excel("TBAdb.xlsx", sheet = "BCR")
 
 db_output[db_output == "-"] <- NA
-
 ```
 
 # 数据库简介
