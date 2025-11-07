@@ -3,6 +3,8 @@
 
 # 快速开始
 
+直接运行以下代码，即可下载并读取各数据库到R环境中
+
 - VDJdb
 ```R
 download.file(
@@ -45,5 +47,14 @@ db_output <- readxl::read_excel("TBAdb-2020-09-10.xlsx", sheet = "TCR-AB")
 db_output <- readxl::read_excel("TBAdb-2020-09-10.xlsx", sheet = "TCR-GD")
 # 第三张表：BCR
 db_output <- readxl::read_excel("TBAdb-2020-09-10.xlsx", sheet = "BCR")
+
+db_output[db_output == "-"] <- NA
+
 ```
+
+# 数据库简介
+[VDJdb](https://vdjdb.cdr3.net/)：一个包含T细胞受体（TCR）序列及其已知抗原特异性的数据库，广泛用于免疫学研究和临床应用。
+[McPAS-TCR](https://friedmanlab.weizmann.ac.il/McPAS-TCR/)：一个专注于T细胞受体（TCR）特异性的数据库，提供了大量的TCR-抗原配对信息。
+[IEDB-AR](https://www.iedb.org/)：免疫表位数据库，包含了大量的抗原-抗体和抗原-T细胞受体相互作用数据。
+[TBAdb](http://www.tbadb.org/)：一个专注于肿瘤浸润淋巴细胞（TIL）T细胞受体（TCR）序列的数据库，提供了丰富的TCR-抗原配对信息。
 
